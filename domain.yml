@@ -1,0 +1,89 @@
+version: "3.1"
+
+intents:
+  - greet
+  - name
+  - mobile_number
+  - email_id
+  - sport
+  - bot_challenge
+
+entities:
+  - my_name
+  - mobile_number
+  - email_id
+  - fav_sport
+
+slots:
+  my_name:
+    type: any 
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: my_name
+    
+  mobile_number:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: mobile_number
+
+  email_id:    
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: email_id
+
+  fav_sport:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: fav_sport
+
+  feedback:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+
+responses:
+  utter_ask_my_name:
+  - text: "Hey! good day what is your name?"
+
+  utter_ask_mobile_number:
+  - text: "Good name, What is your mobile number?"
+    
+
+  utter_ask_email_id:
+  - text: "That's great, give me your email id"
+
+  utter_ask_fav_sport:
+  - text: "what's your favourite sport?"
+
+  utter_thanks:
+  - text: "Thank you {my_name} for your valuable time . Have a good day "
+
+  utter_ask_feedback:
+  - text: "How is the overall chat experience? "
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_submit
+
+forms:
+  userinformation_form:
+    required_slots:
+      - my_name
+      - mobile_number
+      - email_id
+      - fav_sport
+      - feedback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
