@@ -1,0 +1,62 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+
+
+- intent: name
+  examples: |
+    - my name is [vidya]{"entity": "my_name","value": "sri vidya"}
+    - [sri vidya]{"entity": "my_name"}
+    - [aparna]{"entity": "my_name"}
+    - my name [teju]{"entity": "my_name"}
+    - my name is [ashish]{"entity": "my_name"}
+
+- intent: mobile_number
+  examples: |
+    - my number is [1234567890]{"entity": "mobile_number"}
+    - my mobile number is [1234567890]{"entity": "mobile_number"}
+    - [2345678921]{"entity": "mobile_number"}
+    - this is my number [3456789012]{"entity": "mobile_number"}
+
+- intent: email_id
+  examples: |
+    - my email id is [qwesd@example.com]{"entity": "email_id"}
+    - [example@example.com]{"entity": "email_id"}
+    - email id [dfgjkdf@gmail.com]{"entity": "email_id"}
+    - email [weytruyg@yahoo.com]{"entity": "email_id"}
+
+- intent: sport
+  examples: |
+    - my favourite sport is [football]{"entity": "fav_sport"}
+    - [cricket]{"entity": "fav_sport"}
+    - [khokho]{"entity": "fav_sport"}
+    - i like playing [volleyball]{"entity": "fav_sport"}
+    - i like [hockey]{"entity": "fav_sport"}
+
+
+
+
+
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
